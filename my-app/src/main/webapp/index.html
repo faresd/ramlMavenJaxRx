@@ -21,16 +21,17 @@
 <!-- Templates -->
 <script type="text/template" id="tpl-presentation-list-item">
     <ui>
-        <% _.each(presentations, function(presentation) {%>
-        <li>
-            <span id="<%= presentation.id %>"><%= presentation.title %></span>
-        </li> <%}); %>
+        <% _.each(presentations, function(presentation) { %>
+            <li>
+                <span id="<%= presentation.id %>"><%= presentation.title %></span>
+            </li>
+        <% }); %>
     </ui>
 </script>
 
 
 <!-- JavaScript -->
-<script src="../lib/jquery-1.7.1.min.js"></script>
+<script src="../lib/jquery-1.8.2.js"></script>
 <script src="../lib/underscore-min.js"></script>
 <script src="../lib/backbone-min.js"></script>
 <script src="js/main.js"></script>
