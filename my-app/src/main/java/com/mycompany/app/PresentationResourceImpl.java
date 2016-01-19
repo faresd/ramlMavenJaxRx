@@ -38,14 +38,16 @@ public class PresentationResourceImpl implements PresentationsResource
                                                      final Integer start,
                                                      final Integer pages)
     {
-        if (!"s3cr3t".equals(authorization))
-        {
-            return GetPresentationsResponse.withUnauthorized();
-        }
+//        if (!"s3cr3t".equals(authorization))
+//        {
+//            return GetPresentationsResponse.withUnauthorized();
+//        }
 
         final Presentations presentations = new Presentations().withSize(1);
 
-        presentations.getPresentations().add(new Presentation().withId("fake-id").withTitle(title));
+        for (int i = 0; i < 5; i++) {
+            presentations.getPresentations().add(new Presentation().withId(Integer.toString(i)).withTitle("Presentaion " + i));
+        }
 
         return GetPresentationsResponse.withJsonOK(presentations);
     }
